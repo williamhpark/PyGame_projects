@@ -60,6 +60,12 @@ class Hand:
         self.value = 0   # start with zero value
         self.aces = 0    # add an attribute to keep track of aces
 
+    def adjust_for_ace(self):
+        if self.value <= 10:
+            self.value += 11
+        else:
+            self.value += 1
+    
     def add_card(self,card):
         self.cards.append(card)
         if card.rank == 'Ace':
@@ -67,12 +73,6 @@ class Hand:
             self.adjust_for_ace()
         else:
             self.value += values[card.rank]
-
-    def adjust_for_ace(self):
-        if self.value <= 10:
-            self.value += 11
-        else:
-            self.value += 1
 
 # Chips class
 

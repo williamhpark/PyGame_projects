@@ -81,7 +81,7 @@ class Chips:
     def __init__(self,total=100):
         while True:
             try:
-                self.total = int(input("How many chips do you have to play with?: "))  # This can be set to a default value or supplied by a user input
+                self.total = int(input("How many chips do you have to play with?: "))
             except:
                 print("Invalid, please enter an ineteger.")
                 continue
